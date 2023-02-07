@@ -1,18 +1,26 @@
 import React, { Component } from "react";
-import { randomWord } from "./RandomWord";
-import "./Hangman.css";
-import image0 from "./images/0.jpg";
-import image1 from "./images/1.jpg";
-import image2 from "./images/2.jpg";
-import image3 from "./images/3.jpg";
-import image4 from "./images/4.jpg";
-import image5 from "./images/5.jpg";
-import image6 from "./images/6.jpg";
+import { selectedWord } from './components/Dictionary';
+
+
+import img0 from './hangmandrawings/state1.GIF';
+import img1 from './hangmandrawings/state2.GIF';
+import img2 from './hangmandrawings/state3.GIF';
+import img3 from './hangmandrawings/state4.GIF';
+import img4 from './hangmandrawings/state5.GIF';
+import img5 from './hangmandrawings/state6.GIF';
+import img6 from './hangmandrawings/state7.GIF';
+import img7 from './hangmandrawings/state8.GIF';
+import img8 from './hangmandrawings/state9.GIF';
+import img9 from './hangmandrawings/state10.gif';
+import img10 from './hangmandrawings/state11.GIF';
+
+   
 
 class Hangman extends Component {
+
   static defaultProps = {
     maxWrong: 6,
-    images: [image0, image1, image2, image3, image4, image5, image6],
+    images: [img0, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10],
   };
 
   constructor(props) {
@@ -20,7 +28,7 @@ class Hangman extends Component {
     this.state = {
       noOfWrong: 0,
       guessed: new Set(),
-      answer: randomWord(),
+      answer: selectedWord(),
     };
     this.handleGuess = this.handleGuess.bind(this);
     this.reset = this.reset.bind(this);
@@ -30,7 +38,7 @@ class Hangman extends Component {
     this.setState({
       noOfWrong: 0,
       guessed: new Set(),
-      answer: randomWord(),
+      answer: selectedWord(),
     });
   }
 
@@ -70,7 +78,6 @@ class Hangman extends Component {
     let restart = gameOver || isWinner;
     return (
       <div className="Hangman">
-        <h2>Hangman</h2>
         <img src={this.props.images[this.state.noOfWrong]} alt="HangMan" />
         <p>
           Guessed Left: {this.props.maxWrong - this.state.noOfWrong} /{" "}
