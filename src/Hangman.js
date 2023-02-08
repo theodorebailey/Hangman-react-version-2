@@ -17,13 +17,9 @@ import img6 from './hangmandrawings/state7.GIF';
 import img7 from './hangmandrawings/state8.GIF';
 import img8 from './hangmandrawings/state9.GIF';
 import img9 from './hangmandrawings/state10.gif';
-import img10 from './hangmandrawings/state11.GIF';
-
-   
+import img10 from './hangmandrawings/state11.GIF';   
 
 class Hangman extends Component {
-
-
 
   static defaultProps = {
     maxWrong: 10,
@@ -67,7 +63,7 @@ class Hangman extends Component {
     return "abcdefghijklmnopqrstuvwxyz".split("").map((letter) => (
       <button
         type="button" 
-        class={`btn ${Buttoncolour()} border ${Bordercolour()}`}
+        class={`btn btn-dark border border-success`}
         key={letter}
         value={letter}
         onClick={this.handleGuess}
@@ -92,7 +88,6 @@ class Hangman extends Component {
           Guessed Left: {this.props.maxWrong - this.state.wrongLetters} /{" "}
           {this.props.maxWrong}
         </p>
-        <p>Guess the Programming Language</p>
         <p className="">
           {!gameOver ? this.guessedWord() : this.state.answer}
         </p>
@@ -102,7 +97,13 @@ class Hangman extends Component {
             Reset game?
           </button>
         )}
-        <Newcomp />
+        <div className="container mt-4">
+        <div>
+            <h3>Instructions</h3>
+            <p>Use the keypad to guess the correct characters of the word before it is too late!</p>
+        </div>
+      </div>
+      <Newcomp />
       </div>
     );
   }

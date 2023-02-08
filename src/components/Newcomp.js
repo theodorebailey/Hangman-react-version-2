@@ -24,7 +24,7 @@ export class Newcomp extends Component {
 
 Buttonchange=()=> {
     this.setState({
-        message: "To change the mood",
+        message: "Change the mood",
     })
 }
     
@@ -36,7 +36,6 @@ Buttonchange=()=> {
      // randomly select item from array
      let buttonColour = colours[Math.floor(Math.random() * colours.length)];
 
-     console.log(buttonColour)
 
     return (
       <div>

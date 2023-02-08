@@ -48,3 +48,12 @@ button:hover {
   -moz-transform:scale(1.5,1.5);
 }
 
+.guessed {
+  font-weight: 900;
+  color: red;
+  border-radius: 5px;
+}
+
+.instructions {
+  padding: spacer;
+}

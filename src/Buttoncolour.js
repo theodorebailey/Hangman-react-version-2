@@ -17,18 +17,8 @@ function Buttoncolour () {
     // randomly select item from array
     let buttonColour = colours[Math.floor(Math.random() * colours.length)];
 
-    return buttonColour;
-
-  
+    return buttonColour;  
 }
 
 export { Buttoncolour };
 
-// btn 
-// btn 
-// btn 
-// btn 
-// btn 
-// btn 
-// btn 
-// btn 

@@ -19,7 +19,6 @@ function Bordercolour () {
 
     return borderColour;
 
-  
 }
 
 export { Bordercolour }
