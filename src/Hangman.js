@@ -63,7 +63,7 @@ class Hangman extends Component {
     return "abcdefghijklmnopqrstuvwxyz".split("").map((letter) => (
       <button
         type="button" 
-        class={`btn btn-dark border border-success`}
+        className={`btn btn-dark border border-success`}
         key={letter}
         value={letter}
         onClick={this.handleGuess}
@@ -82,8 +82,8 @@ class Hangman extends Component {
     if (gameOver) gameState = "Better Luck Next Time";
     let restart = gameOver || isWinner;
     return (
-      <div className="Hangman">
-        <img src={this.props.images[this.state.wrongLetters]} alt="HangMan" />
+      <div>
+        <img src={this.props.images[this.state.wrongLetters]} />
         <p>
           Guessed Left: {this.props.maxWrong - this.state.wrongLetters} /{" "}
           {this.props.maxWrong}
@@ -93,7 +93,7 @@ class Hangman extends Component {
         </p>
         <p className="">{gameState}</p>
         {restart && (
-          <button type="button" class="btn btn-primary" onClick={this.reset}>
+          <button type="button" className="btn btn-primary" onClick={this.reset}>
             Reset game?
           </button>
         )}
