@@ -77436,14 +77436,13 @@ Zyrian
 
 function selectedWord () {
     // set words to dictionary
- let words = Dictionary.split("\n");
- // use Math to select random word from dictionary
- let selected = words[Math.floor(Math.random() * words.length)];
-// import images
+    let words = Dictionary.split("\n");
+    // use Math to select random word from dictionary
+    let selected = words[Math.floor(Math.random() * words.length)];
+    // import images
 
 return selected;
 
 }
- 
 
 export { selectedWord } ;
