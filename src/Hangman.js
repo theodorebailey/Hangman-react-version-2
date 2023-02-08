@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { selectedWord } from './components/Dictionary';
+// import { selectedWord } from './components/Dictionary';
+import { selectedWord } from './Dictionary';
 
 
 import img0 from './hangmandrawings/state1.GIF';

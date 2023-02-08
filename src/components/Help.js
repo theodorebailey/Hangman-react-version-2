@@ -9,7 +9,6 @@ const Help = () => {
             <h3 className="instructions-header">Instructions</h3>
             <p className="instructions">Use your keyboard to guess the correct characters of the word before it is too late!</p>
         </div>
-      
     </div>
   )
 }
