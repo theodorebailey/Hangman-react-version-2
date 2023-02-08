@@ -7,9 +7,7 @@ border-success
 border-danger
 border-warning
 border-info
-border-light
 border-dark
-border-white
 `
 
 function Bordercolour () {

@@ -5,6 +5,7 @@ import { Bordercolour} from './Bordercolour';
 import { Buttoncolour } from './Buttoncolour';
 import Newcomp from './components/Newcomp';
 
+import './App.css';
 
 import img0 from './hangmandrawings/state1.GIF';
 import img1 from './hangmandrawings/state2.GIF';
@@ -66,7 +67,7 @@ class Hangman extends Component {
     return "abcdefghijklmnopqrstuvwxyz".split("").map((letter) => (
       <button
         type="button" 
-        class={`btn ${Buttoncolour()}`}
+        class={`btn ${Buttoncolour() || 'btn-warning'} border ${Bordercolour() || 'border-primary'}`}
         key={letter}
         value={letter}
         onClick={this.handleGuess}
@@ -92,13 +93,13 @@ class Hangman extends Component {
           {this.props.maxWrong}
         </p>
         <p>Guess the Programming Language</p>
-        <p className="Hangman-word">
+        <p className="">
           {!gameOver ? this.guessedWord() : this.state.answer}
         </p>
-        <p className="Hangman-btns">{gameState}</p>
+        <p className="">{gameState}</p>
         {restart && (
           <button type="button" class="btn btn-primary" onClick={this.reset}>
-            Restart?
+            Reset game?
           </button>
         )}
         <Newcomp />

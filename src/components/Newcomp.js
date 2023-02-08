@@ -18,16 +18,15 @@ export class Newcomp extends Component {
       super(props)
     
       this.state = {
-         message: "Subscribe to simply",
+         message: "Change the colour",
          sub: "Dance",
-         Buttoncolour: {Colours}
       }
     }
 
 Buttonchange=()=> {
     this.setState({
-        message: "Hit the bell icon to never miss an update",
-        sub: "Subscribed"
+        message: "To change the mood",
+        sub: "Everyday",
     })
 }
     
