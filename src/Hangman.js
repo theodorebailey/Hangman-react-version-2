@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 // import { selectedWord } from './components/Dictionary';
 import { selectedWord } from './Dictionary';
-import { Bordercolour} from './Bordercolour'
-import { Buttoncolour } from './Buttoncolour'
+import { Bordercolour} from './Bordercolour';
+import { Buttoncolour } from './Buttoncolour';
+import Newcomp from './components/Newcomp';
 
 
 import img0 from './hangmandrawings/state1.GIF';
@@ -20,6 +21,8 @@ import img10 from './hangmandrawings/state11.GIF';
    
 
 class Hangman extends Component {
+
+
 
   static defaultProps = {
     maxWrong: 10,
@@ -63,7 +66,7 @@ class Hangman extends Component {
     return "abcdefghijklmnopqrstuvwxyz".split("").map((letter) => (
       <button
         type="button" 
-        class={Buttoncolour()}
+        class={`btn ${Buttoncolour()}`}
         key={letter}
         value={letter}
         onClick={this.handleGuess}
@@ -98,6 +101,7 @@ class Hangman extends Component {
             Restart?
           </button>
         )}
+        <Newcomp />
       </div>
     );
   }

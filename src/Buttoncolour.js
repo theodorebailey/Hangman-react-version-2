@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 const Colours = `
 btn-primary
@@ -7,7 +7,6 @@ btn-success
 btn-danger
 btn-warning
 btn-info
-btn-light
 btn-dark
 `
 
