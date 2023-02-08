@@ -1,8 +1,5 @@
 import React, { Component } from "react";
-// import { selectedWord } from './components/Dictionary';
 import { selectedWord } from './Dictionary';
-import { Bordercolour} from './Bordercolour';
-import { Buttoncolour } from './Buttoncolour';
 import Newcomp from './components/Newcomp';
 
 import './App.css';
