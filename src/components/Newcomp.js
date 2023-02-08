@@ -19,14 +19,12 @@ export class Newcomp extends Component {
     
       this.state = {
          message: "Change the colour",
-         sub: "Dance",
       }
     }
 
 Buttonchange=()=> {
     this.setState({
         message: "To change the mood",
-        sub: "Everyday",
     })
 }
     
@@ -42,11 +40,8 @@ Buttonchange=()=> {
 
     return (
       <div>
-        <h3>
-            { this.state.message }
-        </h3>
         <button className={`btn ${buttonColour}`} onClick={this.Buttonchange}>
-            {this.state.sub}
+            {this.state.message}
         </button>
       </div>
     )

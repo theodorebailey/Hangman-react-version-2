@@ -67,7 +67,7 @@ class Hangman extends Component {
     return "abcdefghijklmnopqrstuvwxyz".split("").map((letter) => (
       <button
         type="button" 
-        class={`btn ${Buttoncolour()} border ${Bordercolour() || 'border-primary'}`}
+        class={`btn ${Buttoncolour()} border ${Bordercolour()}`}
         key={letter}
         value={letter}
         onClick={this.handleGuess}
