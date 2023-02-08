@@ -6,10 +6,12 @@ import Help from './components/Help'
 
 function App() {
   return (
-    <div className="App">
+    <div className="App container-fluid">
+      <div className="row border bg-light">
       <Header />
       <Hangman />
       <Help />
+      </div>
     </div>
   );
 }

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 // import { selectedWord } from './components/Dictionary';
 import { selectedWord } from './Dictionary';
+import { Bordercolour} from './Bordercolour'
+import { Buttoncolour } from './Buttoncolour'
 
 
 import img0 from './hangmandrawings/state1.GIF';
@@ -60,6 +62,8 @@ class Hangman extends Component {
   generateKeypad() {
     return "abcdefghijklmnopqrstuvwxyz".split("").map((letter) => (
       <button
+        type="button" 
+        class={Buttoncolour()}
         key={letter}
         value={letter}
         onClick={this.handleGuess}
@@ -90,7 +94,7 @@ class Hangman extends Component {
         </p>
         <p className="Hangman-btns">{gameState}</p>
         {restart && (
-          <button id="reset" onClick={this.reset}>
+          <button type="button" class="btn btn-primary" onClick={this.reset}>
             Restart?
           </button>
         )}
