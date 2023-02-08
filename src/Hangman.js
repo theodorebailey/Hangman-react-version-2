@@ -19,14 +19,14 @@ import img10 from './hangmandrawings/state11.GIF';
 class Hangman extends Component {
 
   static defaultProps = {
-    maxWrong: 6,
+    maxWrong: 10,
     images: [img0, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10],
   };
 
   constructor(props) {
     super(props);
     this.state = {
-      noOfWrong: 0,
+      wrongLetters: 0,
       guessed: new Set(),
       answer: selectedWord(),
     };
@@ -36,7 +36,7 @@ class Hangman extends Component {
 
   reset() {
     this.setState({
-      noOfWrong: 0,
+      wrongLetters: 0,
       guessed: new Set(),
       answer: selectedWord(),
     });
@@ -52,7 +52,7 @@ class Hangman extends Component {
     let letter = evt.target.value;
     this.setState((st) => ({
       guessed: st.guessed.add(letter),
-      noOfWrong: st.noOfWrong + (st.answer.includes(letter) ? 0 : 1),
+      wrongLetters: st.wrongLetters + (st.answer.includes(letter) ? 0 : 1),
     }));
   }
 
@@ -70,7 +70,7 @@ class Hangman extends Component {
   }
 
   render() {
-    const gameOver = this.state.noOfWrong >= this.props.maxWrong;
+    const gameOver = this.state.wrongLetters >= this.props.maxWrong;
     const isWinner = this.guessedWord().join("") === this.state.answer;
     let gameState = this.generateKeypad();
     if (isWinner) gameState = "Congrats, You have won the Game";
@@ -78,9 +78,9 @@ class Hangman extends Component {
     let restart = gameOver || isWinner;
     return (
       <div className="Hangman">
-        <img src={this.props.images[this.state.noOfWrong]} alt="HangMan" />
+        <img src={this.props.images[this.state.wrongLetters]} alt="HangMan" />
         <p>
-          Guessed Left: {this.props.maxWrong - this.state.noOfWrong} /{" "}
+          Guessed Left: {this.props.maxWrong - this.state.wrongLetters} /{" "}
           {this.props.maxWrong}
         </p>
         <p>Guess the Programming Language</p>
