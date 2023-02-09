@@ -44,7 +44,7 @@ export class Buttoncomp extends Component {
     
   render() {
 
-    // split list of Button style types
+    // split list of Button style types by white space
     let colours = Colours.split("\n");
 
     // randomly select item from array
@@ -52,8 +52,10 @@ export class Buttoncomp extends Component {
     let buttonColour1 = colours[Math.floor(Math.random() * colours.length)];
     let buttonColour2 = colours[Math.floor(Math.random() * colours.length)];
 
+    // split letter list by white space into variable
     let lettering = Letters.split("\n");
 
+    // randmoiser
     let buttonText = lettering[Math.floor(Math.random() * lettering.length)];
     let buttonText1 = lettering[Math.floor(Math.random() * lettering.length)];
     let buttonText2 = lettering[Math.floor(Math.random() * lettering.length)];
