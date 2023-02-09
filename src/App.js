@@ -10,11 +10,9 @@ function App() {
 
   return (
     <div className="App">
-      <div className="">
         <Header />
         <Hangman />
         <Season />
-      </div>
     </div>
   );
 }
