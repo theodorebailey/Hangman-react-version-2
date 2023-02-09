@@ -7,6 +7,7 @@ import Season from './Season'
 
 function App() {
 
+  // main app components
 
   return (
     <div className="App">

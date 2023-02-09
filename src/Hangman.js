@@ -80,7 +80,7 @@ class Hangman extends Component {
   generateKeypad() {
     // return string split then mapped and set items to parameter letter
     return "abcdefghijklmnopqrstuvwxyz".split("").map((letter) => (
-      // return a button
+      // return a button with unique key, class attributed in bootstrap, onclick event to handle value and set disabled to change attributes
       <button
         type="button" 
         className={`btn btn-dark border border-success`}
