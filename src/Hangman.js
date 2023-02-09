@@ -135,10 +135,6 @@ class Hangman extends Component {
             Reset game?
           </button>
         <div className="container mt-4">
-        <div>
-            <h3>Instructions</h3>
-            <p>Use the keypad to guess the correct characters of the word before it is too late!</p>
-        </div>
       </div>
       {/* Dancing components */}
       <Buttoncomp />
