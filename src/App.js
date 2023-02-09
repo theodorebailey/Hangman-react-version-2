@@ -2,6 +2,7 @@ import React from "react";
 import Hangman from "./Hangman";
 import "./App.css";
 import { Header } from './components/common';
+import Season from './Season'
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <div className="">
         <Header />
         <Hangman />
+        <Season />
       </div>
     </div>
   );
