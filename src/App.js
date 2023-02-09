@@ -8,10 +8,10 @@ function App() {
 
 
   return (
-    <div className="App container-fluid">
+    <div className="App">
       <div className="row">
       </div>
-      <div className="row border bg-light d-flex flex-column">
+      <div className="">
         <Header />
         <Hangman />
       </div>

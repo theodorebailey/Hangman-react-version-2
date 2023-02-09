@@ -66,31 +66,45 @@ class Hangman extends Component {
         onClick={this.handleGuess}
         disabled={this.state.guessed.has(letter)}
       >
-        {letter}
+        {letter.toUpperCase()}
       </button>
     ));
   }
 
   render() {
+    // game over is evaluated to state, if wrong letters exceeds maximum wrong guesses
     const gameOver = this.state.wrongLetters >= this.props.maxWrong;
-    const isWinner = this.guessedWord().join("") === this.state.answer;
-    let gameState = this.generateKeypad();
-    if (isWinner) gameState = "Congrats, You have won the Game";
-    if (gameOver) gameState = "Better Luck Next Time";
-    let restart = gameOver || isWinner;
+    // winning results from evaluation of guessedWord joined value equaling states dictionary word
+    const winningGame = this.guessedWord().join("") === this.state.answer;
+    let keyPadGenerator = this.generateKeypad();
+
+    // if guessed word === states answer
+    if (winningGame) {
+      // reassign keypad value of string referring to game state win or loss
+      keyPadGenerator = "Winner";
+      // else if wrongletters === maximum wrong guesses of 10
+    } else if (gameOver) {
+      // reassign keypad value of string referring to game state win or loss
+      keyPadGenerator = "Game Over";
+    }
+
+    // restartGame is either 
+    let restartGame = gameOver || winningGame;
     return (
-      <div>
+      <div className="container">
+        {/* populate game with hangman images dependent on wrongLetter count */}
         <img src={this.props.images[this.state.wrongLetters]} />
-        <p>
+        <div className="container mt-4">
           Guessed Left: {this.props.maxWrong - this.state.wrongLetters} /{" "}
           {this.props.maxWrong}
-        </p>
-        <p className="">
+        </div>
+        <div className="container mt-4 p-4">
           {!gameOver ? this.guessedWord() : this.state.answer}
-        </p>
-        <p className="">{gameState}</p>
-        {restart && (
-          <button type="button" className="btn btn-primary" onClick={this.reset}>
+        </div>
+        {/* populate game with generated keypad */}
+        <div className="mt-4">{keyPadGenerator}</div>
+        {restartGame && (
+          <button type="button" className="btn btn-primary m-4" onClick={this.reset}>
             Reset game?
           </button>
         )}
