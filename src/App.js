@@ -9,8 +9,6 @@ function App() {
 
   return (
     <div className="App">
-      <div className="row">
-      </div>
       <div className="">
         <Header />
         <Hangman />

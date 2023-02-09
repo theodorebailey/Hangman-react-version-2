@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { selectedWord } from './Dictionary';
-import Newcomp from './components/Newcomp';
+import Buttoncomp from './components/Buttoncomp';
 
 import './App.css';
 
@@ -76,6 +76,7 @@ class Hangman extends Component {
     const gameOver = this.state.wrongLetters >= this.props.maxWrong;
     // winning results from evaluation of guessedWord joined value equaling states dictionary word
     const winningGame = this.guessedWord().join("") === this.state.answer;
+    // variable set to function generate keypad to populate page with usable keys
     let keyPadGenerator = this.generateKeypad();
 
     // if guessed word === states answer
@@ -95,10 +96,10 @@ class Hangman extends Component {
         {/* populate game with hangman images dependent on wrongLetter count */}
         <img src={this.props.images[this.state.wrongLetters]} />
         <div className="container mt-4">
-          Guessed Left: {this.props.maxWrong - this.state.wrongLetters} /{" "}
+          Guesses Left: {this.props.maxWrong - this.state.wrongLetters} /{" "}
           {this.props.maxWrong}
         </div>
-        <div className="container mt-4 p-4">
+        <div className="m-2 p-4">
           {!gameOver ? this.guessedWord() : this.state.answer}
         </div>
         {/* populate game with generated keypad */}
@@ -114,7 +115,11 @@ class Hangman extends Component {
             <p>Use the keypad to guess the correct characters of the word before it is too late!</p>
         </div>
       </div>
-      <Newcomp />
+      <Buttoncomp />
+      <br />
+      <Buttoncomp />
+      <br />
+      <Buttoncomp />
       </div>
     );
   }
