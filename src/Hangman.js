@@ -96,14 +96,14 @@ class Hangman extends Component {
         {/* populate game with hangman images dependent on wrongLetter count */}
         <img src={this.props.images[this.state.wrongLetters]} />
         <div className="container mt-4">
-          Guesses Left: {this.props.maxWrong - this.state.wrongLetters} /{" "}
+          Guesses Left: {this.props.maxWrong - this.state.wrongLetters} / {" "}
           {this.props.maxWrong}
         </div>
-        <div className="m-2 p-4">
-          {!gameOver ? this.guessedWord() : this.state.answer}
+        <div className="">
+          {!gameOver ? this.guessedWord(): this.state.answer.toUpperCase()}
         </div>
         {/* populate game with generated keypad */}
-        <div className="mt-4">{keyPadGenerator}</div>
+        <div className="">{keyPadGenerator}</div>
         {restartGame && (
           <button type="button" className="btn btn-primary m-4" onClick={this.reset}>
             Reset game?
@@ -115,6 +115,10 @@ class Hangman extends Component {
             <p>Use the keypad to guess the correct characters of the word before it is too late!</p>
         </div>
       </div>
+      <Buttoncomp />
+      <br />
+      <Buttoncomp />
+      <br />
       <Buttoncomp />
       <br />
       <Buttoncomp />
