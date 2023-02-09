@@ -104,11 +104,10 @@ class Hangman extends Component {
         </div>
         {/* populate game with generated keypad */}
         <div className="">{keyPadGenerator}</div>
-        {restartGame && (
+        {/* reset game button */}
           <button type="button" className="btn btn-primary m-4" onClick={this.reset}>
             Reset game?
           </button>
-        )}
         <div className="container mt-4">
         <div>
             <h3>Instructions</h3>
