@@ -22,23 +22,25 @@ Magic
 Wonder
 `
 
-
 export class Buttoncomp extends Component {
 
-    
+    // constructor
     constructor(props) {
+      // pass props
       super(props)
-    
+      // set state to message   
       this.state = {
-         message: "Change the colour",
+        message: "Change the colour",
       }
     }
 
-Buttonchange=()=> {
-    this.setState({
-        message: "Change the mood",
-    })
-}
+    // arrow function for event
+    Buttonchange=()=> {
+      // changed functionality but still required
+        this.setState({
+            message: "Change the mood",
+        })
+    }
     
   render() {
 
@@ -58,20 +60,31 @@ Buttonchange=()=> {
 
 
     return (
+      // container for button elements
       <div className="container">
+        {/* row bootstrap styling */}
         <div className="row">
+          {/* small columns line of 3 */}
           <div className="col-sm">
+            {/* button element class prop class, onclickmethod this.function  */}
             <button className={`btn ${buttonColour}`} onClick={this.Buttonchange}>
+              {/* either text or if false default */}
                 {buttonText || "Superfly"}
+                {/* required for button functionality */}
+                {this.state.change}
             </button>
           </div>
           <div className="col-sm">
+            {/* button element class prop class, onclickmethod this.function  */}
             <button className={`btn ${buttonColour1}`} onClick={this.Buttonchange}>
+              {/* either text or if false default */}
               {buttonText1 || "Delightful"}
             </button>
           </div>
           <div className="col-sm">
+            {/* button element class prop class, onclickmethod this.function  */}
             <button className={`btn ${buttonColour2}`} onClick={this.Buttonchange}>
+              {/* either text or if false default */}
               {buttonText2 || "Satisfaction"}
             </button>
           </div>

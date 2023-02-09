@@ -95,7 +95,7 @@ class Hangman extends Component {
       <div className="container">
         {/* populate game with hangman images dependent on wrongLetter count */}
         <img src={this.props.images[this.state.wrongLetters]} />
-        <div className="">
+        <div className="m-4">
         Guesses Left: {this.props.maxWrong - this.state.wrongLetters} / {" "}
           {this.props.maxWrong}
           <br />
