@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+// template literal to produce list
 const Colours = `btn-primary
 btn-secondary
 btn-success
@@ -10,6 +11,7 @@ btn-light
 btn-dark
 `
 
+// template literal to produce list
 const Letters = `Love
 Fulfillment
 Joy
