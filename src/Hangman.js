@@ -4,6 +4,7 @@ import Buttoncomp from './components/Buttoncomp';
 
 import './App.css';
 
+// Import hangman image files
 import img0 from './hangmandrawings/state1.GIF';
 import img1 from './hangmandrawings/state2.GIF';
 import img2 from './hangmandrawings/state3.GIF';
@@ -16,48 +17,70 @@ import img8 from './hangmandrawings/state9.GIF';
 import img9 from './hangmandrawings/state10.gif';
 import img10 from './hangmandrawings/state11.GIF';   
 
+// create class component with built in state object
 class Hangman extends Component {
 
+  // set default component properties
   static defaultProps = {
     maxWrong: 10,
     images: [img0, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10],
   };
 
+  // create consutructor with states
   constructor(props) {
     super(props);
     this.state = {
+      // wrong letters preset
       wrongLetters: 0,
+      // Set lets us store our unique values
       guessed: new Set(),
+      // answer set to selected word function return value
       answer: selectedWord(),
     };
+    // use bind to set value to this keyword
     this.handleGuess = this.handleGuess.bind(this);
+    // use bind again for reset
     this.reset = this.reset.bind(this);
   }
 
+  // reset function required to reset information to original settings
   reset() {
     this.setState({
+      // reset will reset values
       wrongLetters: 0,
+      // Set data back
       guessed: new Set(),
+      // create a new selected word
       answer: selectedWord(),
     });
   }
 
+  // guessed word function
   guessedWord() {
+    // 
     return this.state.answer
       .split("")
       .map((letter) => (this.state.guessed.has(letter) ? letter : "_"));
   }
 
-  handleGuess(evt) {
-    let letter = evt.target.value;
-    this.setState((st) => ({
-      guessed: st.guessed.add(letter),
-      wrongLetters: st.wrongLetters + (st.answer.includes(letter) ? 0 : 1),
+  // handle keypad
+  handleGuess(e) {
+    // event, grab letter
+    let letter = e.target.value;
+    // set state to letter
+    this.setState((state) => ({
+      // add letter to guessed letters
+      guessed: state.guessed.add(letter),
+      // evaluate wrong letter based on if answer includes letter
+      wrongLetters: state.wrongLetters + (state.answer.includes(letter) ? 0 : 1),
     }));
   }
 
+  // generate keypad
   generateKeypad() {
+    // return string split then mapped and set items to parameter letter
     return "abcdefghijklmnopqrstuvwxyz".split("").map((letter) => (
+      // return a button
       <button
         type="button" 
         className={`btn btn-dark border border-success`}
@@ -66,11 +89,13 @@ class Hangman extends Component {
         onClick={this.handleGuess}
         disabled={this.state.guessed.has(letter)}
       >
+        {/* populate buttons with letter set to uppercase */}
         {letter.toUpperCase()}
       </button>
     ));
   }
 
+  // class components requrie render
   render() {
     // game over is evaluated to state, if wrong letters exceeds maximum wrong guesses
     const gameOver = this.state.wrongLetters >= this.props.maxWrong;
@@ -99,6 +124,7 @@ class Hangman extends Component {
         Guesses Left: {this.props.maxWrong - this.state.wrongLetters} / {" "}
         {this.props.maxWrong}
         <br />
+        {/* if game not over, tertiary operator to  */}
         {!gameOver ? this.guessedWord(): this.state.answer.toUpperCase()} 
         </div>
         {/* populate game with generated keypad */}
@@ -113,6 +139,7 @@ class Hangman extends Component {
             <p>Use the keypad to guess the correct characters of the word before it is too late!</p>
         </div>
       </div>
+      {/* Dancing components */}
       <Buttoncomp />
       <br />
       <Buttoncomp />
