@@ -6,33 +6,41 @@ import img0 from './seasons/0.png'
 import img1 from './seasons/1.png'
 import img2 from './seasons/2.png'
 import img3 from './seasons/3.png'
+import img5 from './seasons/cap.png'
 
 // create array object
 const season = [
     {
-    id: "1",
+    id : "1",
     key: "1",
     title: "Spring",
     img: img1
     },
     {
-    id: "2",
+    id : "2",
     key: "2",
     title: "Summer",
     img: img0
     },
     {
-    id: "3",
+    id : "3",
     key: "3",
     title: "Autumn",
     img: img2
     },
     {
-    id: "4",
+
+    id : "4",
     key: "4",
     title: "Winter",
     img: img3
-    }
+    },
+    {
+    id : "5",
+    key: "5",
+    title: "Instructions",
+    img: img5
+    },
 ];
 
 // function to populate images on page in alternative method using an array of objects
@@ -43,22 +51,15 @@ function Season() {
     // 
     return (
     <div className="container">
-        {season.map(({ title, text, key, img }) => {
+        {season.map(({ id, key, title, img }) => {
         return (
-            <div className="row">
+            <div className="row"  key={key}>
                 <div>
                 <h1 onClick={() => setToggle(key)}>{title}</h1>
                 {toggle === key ? (
                     <>
-                    {/* <p>{text}</p> */}
-                    </>
-                ) : null}
-                </div>
-                <div className="col-xl col-xs-6">
-                {toggle === key ? (
-                    <>
                     {/* inline style image */}
-                    <img style={{width: 400, height: 400, borderRadius: 400/ 2}}  src={img} key={key} />
+                    <img style={{width: 350, height: 350, borderRadius: 400/ 2}}  src={img}/>
                     </>
                 ) : null}
                 </div>
