@@ -55,11 +55,12 @@ function Season() {
         return (
             <div className="row"  key={key}>
                 <div>
+                    {/* on click event toggle key use state, unique identifier */}
                 <h1 onClick={() => setToggle(key)}>{title}</h1>
                 {toggle === key ? (
                     <>
                     {/* inline style image */}
-                    <img style={{width: 350, height: 350, borderRadius: 400/ 2}}  src={img}/>
+                    <img style={{width: 350, height: 350, borderRadius: 400/ 2}}  src={img} alt="seasonal_insutructions"/>
                     </>
                 ) : null}
                 </div>

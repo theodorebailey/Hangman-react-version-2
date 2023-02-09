@@ -57,7 +57,7 @@ class Hangman extends Component {
 
   // guessed word function
   guessedWord() {
-    // 
+    // return answer .split, map letters if true selected populate or populate blank space
     return this.state.answer
       .split("")
       .map((letter) => (this.state.guessed.has(letter) ? letter : "_"));
