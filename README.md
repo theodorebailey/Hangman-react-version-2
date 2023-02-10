@@ -1,3 +1,26 @@
+Straight forward game:
+
+The project is a basic game of "Hangman"
+Correct the guess letters to spell the word to save our fated hero.
+use your keyboard to select letters to guess the word combination
+You have 11 guesses total
+Start with vowels, can still prove difficult :)
+You'll need a code editor - I use VSCode
+
+You'll also need Node.js installed on your machine: https://nodejs.org/en/download/
+
+You can download the files from Git - green code button
+- Zip files will require extraction
+
+You will likely have to install dependencies using: npm install in the command line whilst current directory of the project: "CapstoneProjectVII-main"
+
+Once all dependencies are downloadrd, use "npm start" to run the project.
+
+The project was made and is maintained by myself, but hopefully it is finished.
+
+Below is the installation instructions provided by React.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
