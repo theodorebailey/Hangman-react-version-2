@@ -1,4 +1,7 @@
-html, body, #app, #app>div {
+html,
+body,
+#app,
+#app > div {
   height: 100%;
 }
 /* fill 100% of page */
@@ -20,9 +23,7 @@ button *:disabled {
 
 /* on hover */
 button:hover {
-  transform:scale(1.5,1.5);
-  -webkit-transform:scale(1.5,1.5);
-  -moz-transform:scale(1.5,1.5);
+  transform: scale(1.5, 1.5);
+  -webkit-transform: scale(1.5, 1.5);
+  -moz-transform: scale(1.5, 1.5);
 }
-
-
