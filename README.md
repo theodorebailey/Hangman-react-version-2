@@ -1,7 +1,7 @@
 Straight forward game:
 
 The project is a basic game of "Hangman"
-Correct the guess letters to spell the word to save our fated hero.
+Guess the correct letters to spell the word to save our fated hero.
 use your keyboard to select letters to guess the word combination
 You have 11 guesses total
 Start with vowels, can still prove difficult :)
